@@ -6,5 +6,25 @@
 	</head>
 	<body>
 		{{ content }}
+
+
+		{% if page.katex %}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" crossorigin="anonymous">
+		<style>
+			/* from <https://github.com/KaTeX/KaTeX/issues/327> */
+			.katex-display > .katex {
+				max-width: 100%;
+			}
+			.katex-display > .katex > .katex-html {
+				max-width: 100%;
+				overflow-x: auto;
+				overflow-y: hidden;
+				padding-left: 2px;
+				padding-right: 2px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+		{% endif %}
 	</body>
 </html>
