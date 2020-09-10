@@ -5,7 +5,9 @@
 		<title>{{ page.title }}</title>
 	</head>
 	<body>
-		{{ content }}
+		<div id="content">
+			{{ content }}
+		</div>
 
 
 		{% if page.katex %}
@@ -25,6 +27,11 @@
 		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+		<script>
+			const div = document.getElementById("content");
+			//renderMathInElement(div, {delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}]});
+			renderMathInElement(div);
+		</script>
 		{% endif %}
 	</body>
 </html>
